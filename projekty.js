@@ -32,7 +32,7 @@ class projekt{
         return code;
     };
 };
-projectTab.push(new projekt("Konkurs Prevac","Prevac.jpg","C++, C#, WindowsForm",`Projekt konkursowy dla firmy Prevac to przedsięwzięcie, 
+projectTab.push(new projekt("Konkurs Prevac","Prevac.jpg","C++, C#, WindowsForm, Modbus, SQLite ", `Projekt konkursowy dla firmy Prevac to przedsięwzięcie, 
 w którym zaprojektowałem i zaprogramowałem system obsługujący linię produkcyjną. 
 System działa zarówno po stronie komputera, jak i serwera,
 umożliwiając pracownikom logowanie się oraz komunikację za pomocą portu szeregowego oraz przez internet przy wykorzystaniu protokołu Modbus.`));
