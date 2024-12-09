@@ -1,46 +1,132 @@
-html{
+/* Stylizacja dla ca³ej strony */
+html {
     background-color: #000000;
     color: green;
 }
-header table{
-    font-size: 25px;
-    width: 100%;
+
+/* Nag³ówek */
+header {
+    background-color: #333; /* T³o nag³ówka */
+    padding: 10px 0;
+}
+
+    /* Nawigacja */
+    header table {
+        font-size: 25px;
+        width: 100%;
+        float: left;
+    }
+/* Nawigacja */
+.nav-list {
+    display: flex;
+    justify-content: center; /* Wszystkie elementy w œrodku */
+    align-items: center;
+    list-style-type: none; /* Usuniêcie kropek */
+    padding: 0;
+    margin: 0;
+    gap: 30px; /* Odstêpy miêdzy elementami */
+}
+
+    .nav-list li {
+        text-align: center;
+        flex: 0; /* Wy³¹czenie automatycznego rozszerzania */
+    }
+
+    .nav-list a {
+        text-decoration: none; /* Usuniêcie podkreœlenia */
+        color: white; /* Kolor tekstu */
+        font-size: 18px; /* Rozmiar czcionki */
+        transition: color 0.3s ease, background-color 0.3s ease; /* Animacje */
+        padding: 5px 10px; /* Dodatkowy odstêp wokó³ tekstu */
+    }
+
+        /* Efekty hover i active */
+        .nav-list a:hover {
+            color: #ff9800; /* Pomarañczowy tekst */
+            background-color: rgba(255, 255, 255, 0.1); /* Pó³przezroczyste t³o */
+            border-radius: 5px; /* Zaokr¹glenie */
+        }
+
+        .nav-list a:active {
+            background-color: rgba(255, 255, 255, 0.2); /* Intensywniejsze t³o */
+            color: #ffffff; /* Bia³y tekst */
+        }
+
+/* Efekty hover i active */
+.nav-list a:hover {
+    color: #ff9800; /* Pomarañczowy tekst */
+    background-color: rgba(255, 255, 255, 0.1); /* Pó³przezroczyste t³o */
+    border-radius: 5px; /* Zaokr¹glenie */
+}
+.nav-list a.active {
+    color: #ff9800;  /* Kolor pomarañczowy dla aktywnego linku */
+    font-weight: bold;  /* Pogrubienie tekstu aktywnego linku */
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between; /* Roz³o¿enie elementów */
+    align-items: center;
+    list-style-type: none; /* Usuniêcie kropek w liœcie */
+    padding: 0 20px;
+    margin: 0; /* Usuniêcie domyœlnych marginesów */
+}
+
+    .nav-list li {
+        flex: 1; /* Równa przestrzeñ dla elementów */
+        text-align: center;
+    }
+
+        .nav-list li.left {
+            text-align: left;
+        }
+
+        .nav-list li.right {
+            text-align: right;
+        }
+
+    .nav-list a {
+        text-decoration: none; /* Usuniêcie podkreœlenia */
+        color: white; /* Kolor tekstu */
+        font-size: 18px; /* Rozmiar czcionki */
+        transition: color 0.3s ease; /* Animacja przy najechaniu */
+    }
+
+        .nav-list a:hover {
+            color: #ff9800; /* Kolor po najechaniu */
+        }
+
+/* G³ówna sekcja */
+main {
     float: left;
-}
-main{
-    float: left;
     width: 100%;
 }
-main table{
-    margin-left: 20%;
-    margin-top: 50px;
-    width: 60%;
-}
-main tr{
-    height: 400px;
-    
-}
-footer,footer a{
-    text-align: center;
-    color: red;
-}
-#top{
-    height: 0px;
-    font-size: 25px;
-    text-align: center;
-}
-main th{
-    height: 10px;
-}
-main td{
-    padding-left: 2%;
-}
-img{
+
+    main table {
+        margin-left: 20%;
+        margin-top: 50px;
+        width: 60%;
+    }
+
+    main tr {
+        height: 400px;
+    }
+
+    main th {
+        height: 10px;
+    }
+
+    main td {
+        padding-left: 2%;
+    }
+
+/* Obrazy */
+img {
     height: 100%;
     width: 350px;
 }
 
-#left{
+#left {
     height: 350px;
     width: 350px;
     border: 0px;
@@ -49,26 +135,87 @@ img{
     border-style: dashed;
     border-color: green;
 }
-#right{
+
+#right {
     width: 100%;
     font-size: 20px;
     text-align: center;
 }
-#topp,#bottom{
+#bottom {
     width: 100%;
 }
-#topp{
-    float: left;
+
+#top {
+    color: red;
+    margin-top: 10px;
+    font-size: 30px;
+    text-align: center;
     height: 80%;
-    
 }
-#bottom{
+
+#bottom {
     height: 20%;
-    float:left;
+    float: left;
     color: blue;
     padding-top: 10px;
     height: 10px;
 }
+
+/* Footer */
+footer, footer a {
+    text-align: center;
+    color: red;
+}
+
+/* Specyficzne klasy */
 .Projekty {
     color: aqua;
 }
+
+/* Dodanie t³a nag³ówka do czarnego motywu */
+header {
+    border-bottom: 2px solid green;
+}
+/* Zmiana t³a podczas najechania myszk¹ */
+.nav-list a:hover {
+    color: #ff9800; /* Zmiana koloru tekstu */
+    background-color: rgba(255, 255, 255, 0.1); /* Zmiana t³a */
+    border-radius: 5px; /* Lekko zaokr¹glone krawêdzie */
+    padding: 5px 10px; /* Dodatkowe marginesy */
+}
+
+/* Zmiana t³a po klikniêciu */
+.nav-list a:active {
+    background-color: rgba(255, 255, 255, 0.2); /* Intensywniejszy kolor */
+    color: #ffffff; /* Kolor tekstu */
+}
+.projects-section {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #111;
+    color: green;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+    .projects-section h1, .projects-section h2 {
+        color: aqua;
+        border-bottom: 1px solid green;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .projects-section p {
+        margin-bottom: 20px;
+    }
+
+    .projects-section a {
+        color: orange;
+        text-decoration: none;
+    }
+
+        .projects-section a:hover {
+            text-decoration: underline;
+        }

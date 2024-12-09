@@ -1,71 +1,38 @@
-let projectTab=[];
-let mainContener=document.getElementById("main");
-console.log(document.getElementById("main"));
-class projekt{
-    constructor(name,fName,tech,disc){
-    this.projektName=name;
-    this.fileName=fName;
-    this.discription=disc;
-    this.technology=tech;
+
+
+class project {
+    constructor(name, fName, tech, disc) {
+        this.projektName = name;
+        this.fileName = fName;
+        this.discription = disc;
+        this.technology = tech;
     }
-    retCode(){
-        let code =`
-        <tr id="top">
-            <th colspan="2">
-                ${this.projektName}
-            <th>
-        </tr>
-        <tr>
-            <td id="left">
-                <img src="${this.fileName}" alt="Img not found">
-            </td>
-            <td id="right">
-                <div id="topp">
-                    ${this.discription}
-                </div>
-                <div id="bottom">
-                    <p>Technologie: <br/>
-                    ${this.technology}</p>
-                </div>
-            </td>
-        </tr>`;
-        return code;
-    };
-};
-projectTab.push(new projekt("Spotify", "spotify.jpg", "C++, SQL, FTP ", `Odtwarzacz muzyki to aplikacja napisana w języku C++ z wykorzystaniem protokołu FTP i bazy danych SQL.
-Umożliwia zarządzanie lokalną biblioteką muzyczną oraz pobieranie utworów z serwera FTP, a także przechowywanie informacji o utworach i playlistach w bazie danych SQL.
-Dzięki temu aplikacja oferuje prostotę użytkowania przy jednoczesnym wsparciu dla dynamicznego zarządzania zawartością.
-Projekt ten połączył moją pasję do muzyki z rozwijaniem umiejętności w pracy z protokołami sieciowymi i bazami danych, tworząc funkcjonalne rozwiązanie,`));
 
-projectTab.push(new projekt("Koder huffmana", "huffman.jpg", "C++, Doxygen", `Koder Huffmana to aplikacja napisana w języku C++, która umożliwia efektywne kompresowanie i dekompresowanie danych
-przy użyciu algorytmu Huffmana. Przy tworzeniu aplikacji po raz pierwszy użyłem narzędzia Doxygen do generowania dokumentacji,
-co pozwoliło mi usystematyzować kod i ułatwić jego zrozumienie. Realizacja tego projektu była świetną okazją do nauki zaawansowanych
-struktur danych i rozwijania umiejętności w tworzeniu profesjonalnej dokumentacji technicznej.,`));
-
-projectTab.push(new projekt("Konkurs Prevac","Prevac.jpg","C++, C#, WindowsForm, Modbus, SQLite ", `Projekt konkursowy dla firmy Prevac to przedsięwzięcie, 
-w którym zaprojektowałem i zaprogramowałem system obsługujący linię produkcyjną. 
-System działa zarówno po stronie komputera, jak i serwera,
-umożliwiając pracownikom logowanie się oraz komunikację za pomocą portu szeregowego oraz przez internet przy wykorzystaniu protokołu Modbus.`));
-
-projectTab.push(new projekt("Szachy","Chess.jpg","C++, SFML",`Szachy to aplikacja napisana w języku C++ z wykorzystaniem biblioteki SFML,
-umożliwiająca grę w szachy na komputerze lokalnym. Zaimplementowałem podświetlanie ruchów, 
-co pomaga graczom planować i podejmować taktyczne decyzje.
-Celem tego projektu było połączenie mojej pasji do szachów z rozwijaniem umiejętności programistycznych, tworząc funkcjonalną i estetyczną grę dla lokalnych rozgrywek`));
-
-projectTab.push(new projekt("Tetris","Tetris.jpg","C++, SFML",`Tetris to przedsięwzięcie,
-w którym zaprojektowałem i zaimplementowałem popularną grę Tetris w języku C++ przy użyciu biblioteki SFML. 
-worzenie tego projektu było dla mnie nie tylko okazją do rozwijania umiejętności programistycznych, ale również do zgłębiania zagadnień związanych z logiką gier.`));
-
-projectTab.push(new projekt("Kalkulator","Calculator.jpg","C#, WPF",`Kalkulator aplikacja napisana w języku C# przy użyciu technologii WPF. 
-oferuje prosty i interaktywny interfejs graficzny, który umożliwia wykonywanie podstawowych operacji matematycznych`));
-
-projectTab.push(new projekt("Olimpiada","","C++",`Wiele Aplikacji przygotowanych na olimpiade informatyczą,
-aplikacje rozwązywały typowe dla olimiady algorytmiczne problemy,`));
-
-let ret="";
-for (let index = 0; index < projectTab.length; index++) {
-    ret+=projectTab[index].retCode();
-    console.log(index);
+    retCode() {
+        return `
+        <div class="project-card">
+            <img src="${this.fileName}" alt="${this.projektName} image">
+            <div class="details">
+                <h3>${this.projektName}</h3>
+                <p><strong>Technologie:</strong> ${this.technology}</p>
+                <p>${this.discription}</p>
+            </div>
+        </div>`;
+    }
 }
-mainContener.innerHTML=ret;
+let projectTab = [
+    new project("Spotify", "spotify.jpg", "C++, SQL, FTP", `Spotify is an application written in C++ using the FTP protocol and SQL database. It allows you to manage a local music library and download songs from an FTP server, as well as store information about songs and playlists in the SQL database.`),
+    new project("Huffman Encoder", "huffman.jpg", "C++, Doxygen", `The Huffman Encoder is an application written in C++ that allows efficient data compression and decompression using the Huffman algorithm.`),
+    new project("Prevac Contest", "Prevac.jpg", "C++, C#, WindowsForm, Modbus, SQLite", `The contest project for the company Prevac, where I designed a system that controls a production line. The system works on both the computer and server sides, enabling login and communication.`),
+    new project("Chess", "Chess.jpg", "C++, SFML", `Chess is an application written in C++ using the SFML library, allowing you to play chess on a local computer.`),
+    new project("Tetris", "Tetris.jpg", "C++, SFML", `Tetris is a popular game created in C++ using SFML.`),
+    new project("Calculator", "Calculator.jpg", "C#, WPF", `The Calculator is an application written in C# using WPF technology. It provides a simple interface for performing basic mathematical operations.`),
+    new project("Olympiad", "", "C++", `Several applications prepared for the computer science olympiad, solving algorithmic problems.`)
+];
 
+
+let ret = "";
+projectTab.forEach(project => {
+    ret += project.retCode();
+});
+document.getElementById("main").innerHTML = ret;

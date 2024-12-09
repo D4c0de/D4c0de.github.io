@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: green;
+    margin: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+    .nav-list li {
+        margin: 0 20px;
+    }
+
+    .nav-list a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+        .nav-list a:hover {
+            color: #ff9800;
+            text-decoration: underline;
+        }
+
+main {
+    padding: 20px;
+}
+
+.project-card {
+    background-color: #111;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+    .project-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        margin-right: 20px;
+    }
+
+    .project-card .details {
+        flex-grow: 1;
+    }
+
+        .project-card .details h3 {
+            color: aqua;
+            margin: 0 0 10px;
+        }
+
+        .project-card .details p {
+            margin: 5px 0;
+        }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
